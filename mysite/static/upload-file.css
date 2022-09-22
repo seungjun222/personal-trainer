@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: "Roboto";
+}
+
+body {
+    position: relative;
+    background-color: black;
+    
+    opacity: 0;
+    overflow: hidden;
+    animation: md1 1s ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
+@keyframes md1{
+    0% {opacity: 0;}
+    60% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+form {
+    background-color: #FFFFFF;
+    padding: 25px;
+}
+
+table {
+    width: 100%; 
+    text-align: center;
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #FFFFFF;
+}
+
+table tr td {
+    padding-top: 15px;            
+}
+
+#main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 7px solid white;
+    padding: 10px;
+    background-color: rgb(49, 177, 209);
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#workout_div{
+    font-size: 20px;
+    color: white;
+}
+
+#text_div{
+    color: white;
+}
+
+a:visited, a:link{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}

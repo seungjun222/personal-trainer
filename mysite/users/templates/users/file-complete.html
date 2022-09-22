@@ -1,0 +1,138 @@
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'upload-file.css' %}"> -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    * {
+        font-family: "Roboto";
+    }
+
+    body {
+        position: relative;
+        background-color: black;
+        
+
+        opacity: 0;
+        overflow: hidden;
+        animation: md1 1s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+
+    @keyframes md1{
+        0% {opacity: 0;}
+        60% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 100px;
+    }
+
+    #main_div{
+        width: 390px;
+        border: 10px solid white;
+        padding: 10px;
+        background-color: rgb(49, 177, 209);
+        font-weight: bold;
+        color: white;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    #text_div{
+        font-size: 20px;
+        color: white;
+    }
+
+    #text_div p{
+        font-size: 25px;
+    }
+
+    a:visited, a:link{
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    a{
+        background-color: rgb(254, 199, 61);
+        margin-left: 10px;
+        padding: 3px;
+        border: 4px solid red;
+    }
+
+    #video_div{
+        display: flex;
+
+    }
+
+    .video_divs{
+        
+    }
+
+    #container{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p_divs{
+        font-size: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #empty{
+       padding: 100px;
+       width: 125px;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        
+        <div id="video_div">
+            <div class="video_dvs">
+                <div class="p_divs">
+                    <p style="color:rgb(255, 0, 0);">업로드한 동영상</p>
+                </div>
+                <video src= {{ path }} width="320px" height="180px" controls autoplay loop></video>
+             
+            </div>
+
+            <div id="empty">
+                <a href="{% url 'user:feedback' %}">결과보기</a>
+            </div>
+
+            <div class="video_dvs">
+                <div class="p_divs">
+                    <p style="color:rgb(255, 0, 0);">트레이너 영상</p>
+                </div>
+                <video src= {{ trainer_path }} width="320px" height="180px" controls autoplay loop></video>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script>
+    const upload = document.getElementById("upld_btn");
+
+    upload.onclick = () => {
+        alert("계산 중입니다! 잠시만 기다려주세요...");
+    }
+    
+</script>

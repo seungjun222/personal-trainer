@@ -1,0 +1,45 @@
+<head>
+<meta http-equiv="refresh" content="3">
+</head>
+<style>
+    body{
+        position: relative;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        overflow: auto;
+    }
+
+    #container{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+    }
+
+    #time{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #explain{
+        margin-top: 15px;
+        font-size: 16px;
+        color: red;
+    }
+
+</style>
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'button2.css' %}"> -->
+
+<body>
+    <div id="container"> 
+        <div id="time">비디오 변환 진행률: {{ time }}</div>
+        <div id="explain">(100%가 되면 자동으로 다음 화면으로 넘어갑니다!)</div>
+    </div>
+</body>

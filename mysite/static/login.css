@@ -1,0 +1,29 @@
+body{
+    position: relative;
+    background-color: black;
+    color: white;
+}
+a:visited, a:link{
+    color: rgb(49, 177, 209);
+    text-decoration: none;
+    font-weight: bold;
+}
+#container{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+
+#success_div{
+    margin-left: 20px;
+    display: block;
+}
+
+#form_div{
+    margin-left: 20px;
+    display: block;
+}

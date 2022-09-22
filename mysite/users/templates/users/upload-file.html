@@ -1,0 +1,148 @@
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'upload-file.css' %}"> -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    * {
+        font-family: "Roboto";
+    }
+
+    body {
+        position: relative;
+        background-color: black;
+        
+
+        opacity: 0;
+        overflow: hidden;
+        animation: md1 1s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+
+    @keyframes md1{
+        0% {opacity: 0;}
+        60% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+
+    form {
+        display: block;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 100px;
+    }
+
+    #main_div{
+        width: 390px;
+        border: 10px solid white;
+        padding: 10px;
+        background-color: rgb(49, 177, 209);
+        font-weight: bold;
+        color: white;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    #text_div{
+        font-size: 20px;
+        color: white;
+    }
+
+    #text_div p{
+        font-size: 25px;
+    }
+
+    a:visited, a:link{
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    a{
+        background-color: rgb(254, 199, 61);
+        margin-left: 10px;
+        padding: 3px;
+        border: 4px solid black;
+    }
+
+    #video_div{
+        display: flex;
+
+    }
+
+    .video_divs{
+        
+    }
+
+    #container{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .p_divs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #empty{
+        width: 150px;
+    }
+
+    #explain_div{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        color: red;
+        font-size: 18px;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <form action="{% url 'user:uploadFile' %}" method="POST" enctype="multipart/form-data">
+            <div id="main_div">
+                <div id="text_div">
+                    <p>비교할 운동을 선택해주세요😄</p>
+                    <br>
+                    <input type="radio" name="workout" value="스쿼트">맨몸스쿼트
+                    <input type="radio" name="workout" value="벤치프레스" checked="checked">벤치프레스
+                    <input type="radio" name="workout" value="풀업">풀업
+                </div>
+                <div id="btn_div">
+                    {% comment %} <form action="{% url 'user:uploadFile' %}" method="POST" enctype="multipart/form-data"> {% endcomment %}
+                    {% comment %} <input type="text" name="fileTitle" placeholder="Enter a title"> {% endcomment %}
+                    <input type="file" name="uploadedFile">
+                    {% csrf_token %}
+                    <input id="upld_btn" type="submit" value="Upload">
+                    <a href="{% url 'user:filecomplete' %}">SKIP</a>
+                </div>
+            </div>
+            <div id="explain_div">
+                <p>이미 업로드 했으면 SKIP 버튼을 누르세요!</p>
+            </div>
+        </form>
+       
+   
+
+
+
+</body>
+<script>
+    const upload = document.getElementById("upld_btn");
+
+    upload.onclick = () => {
+        alert("계산 중입니다! 잠시만 기다려주세요...");
+    }
+    
+</script>

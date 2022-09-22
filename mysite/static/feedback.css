@@ -1,0 +1,99 @@
+
+@charset "utf-8";
+
+html, body {width: 100%; height:100%;}
+header,footer{width:100%;}
+html, body, header,footer, nav, div, ul, li, dl, dt, dd, p, span, h1 , h2, h3, figure, img, a {box-sizing:border-box; margin: 0; padding:0;}
+h1,h2,h3,h4 {font-weight:normal;}
+ul, ol, li{list-style:none;}
+a {text-decoration:none; display:inline-block;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
+img{width:100%;}
+button{cursor: pointer; background: inherit;}
+
+body{
+    position: relative;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    overflow: auto;
+
+}
+
+#container{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    overflow: hidden;
+    animation: md1 1s ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
+@keyframes md1{
+    0% {opacity: 0;}
+    60% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+.dvs{
+    font-size: 20px;
+    width: 300px;
+    height: 100px;
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dv1{
+    background-color: red;
+    width: 640px;
+}
+
+#dv2{
+    background-color: orange;
+}
+
+#dv3{
+    background-color: rgb(168, 168, 2);
+}
+
+#dv4{
+    background-color: green;
+    width: 640px;
+}
+
+#dv5{
+    background-color: blue;
+    height: 200px;
+}
+
+#dv6{
+    background-color: purple;
+    height: 200px;
+}
+
+#dv7{
+    background-color: pink;
+    width: 640px;
+    height: 200px;
+}
+
+
+#scores{
+    display: flex;
+}
+
+#videos{
+    display: flex;
+}

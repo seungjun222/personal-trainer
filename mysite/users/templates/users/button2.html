@@ -1,0 +1,106 @@
+<style>
+
+    body{
+        position: relative;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        overflow: auto;
+    }
+
+    #container{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+    
+        opacity: 0;
+        overflow: hidden;
+        animation: md1 1s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+
+    }
+    
+    @keyframes md1{
+        0% {opacity: 0;}
+        60% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+    
+    #guide{
+        color: red;
+
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .row{
+        line-height: 60px;
+    }
+    #text_div{
+        margin-left: 18%;
+        margin-bottom: 50px;
+        display: block;
+    }
+
+    #video_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .empty{
+        padding: 20px;
+    }
+
+    .haha{
+        display: block;
+    }
+
+    .ha{
+        font-size: 18px;
+        font-weight: normal;
+        color: red;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'button2.css' %}"> -->
+
+<body>
+    <div id="container">
+        <div id="text_div">
+            <div id="guide">※　가이드라인　※</div>
+            <div class="row">★　업로드 영상은 mp4로 올려주세요!</div>
+            <div class="row">★　영상에서 한 동작만 수행하도록 하세요!</div>
+            <div class="row">★　영상에 타인이 나오지 않도록 주의하세요!</div>
+            <div class="row">★　스켈레톤 인식이 잘 됐는지 확인하세요!</div>
+            <div class="row">★　아래 영상과 최대한 비슷하게 촬영하세요!</div>
+        </div>
+        
+        <div id="video_div">
+            <div class="haha">
+                <video src= "../../../static/trainer/benchpress_trainer.mp4" width="200px" height="100px" controls autoplay loop muted></video>
+                <div class="ha">벤치프레스</div>
+            </div>
+            <div class="empty"></div>
+            <div class="haha">
+                <video src= "../../../static/trainer/squat_trainer.mp4" width="200px" height="100px" controls autoplay loop muted></video>
+                <div class="ha">맨몸스쿼트</div>
+            </div>
+            <div class="empty"></div>
+            <div class="haha">
+                <video src= "../../../static/trainer/pullup_trainer.mp4" width="200px" height="100px" controls autoplay loop muted></video>
+                <div class="ha">풀업</div>
+            </div>
+        </div>
+    </div>
+</body>

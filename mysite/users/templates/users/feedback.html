@@ -1,0 +1,551 @@
+<style>
+    
+    @charset "utf-8";
+    
+    html, body {width: 100%; height:100%; margin : 0; padding : 0; border : none; overflow : auto;}
+    header,footer{width:100%;}
+    html, body, header,footer, nav, div, ul, li, dl, dt, dd, p, span, h1 , h2, h3, figure, img, a {box-sizing:border-box; margin: 0; padding:0;}
+    h1,h2,h3,h4 {font-weight:normal;}
+    ul, ol, li{list-style:none;}
+    a {text-decoration:none; display:inline-block;}
+    a:hover {text-decoration:none;}
+    a:active {text-decoration:none;}
+    img{width:100%;}
+    button{cursor: pointer; background: inherit;}
+    
+    body{
+        position: relative;
+        background-color: black;
+        color: black;
+        font-size: 15px;
+        font-weight: bold;
+        overflow: auto;
+    
+    }
+    
+    #container{
+        position: absolute;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+    
+        background-color: rgb(85, 76, 53);
+        border: 5px solid rgb(254, 199, 61);
+        padding-left: 20px;
+        padding-bottom: 20px;
+
+        opacity: 0;
+        overflow: hidden;
+        animation: md1 1s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+    
+    @keyframes md1{
+        0% {opacity: 0;}
+        60% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+    
+    video{
+        width: 100%;
+        height: 100%;
+    }
+
+    .dvs{
+        font-size: 20px;
+        width: 300px;
+        height: 100px;
+        margin: 20px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #dv1{
+        background-color: rgb(85, 76, 53);
+        color: rgb(254, 199, 61);
+        font-size: 36px;
+    
+        height: 100px;
+        margin: 20px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #dv2{
+
+        background-color: black;
+        color: white;
+        display: block;
+        height: 300px;
+        
+        width: 200px;
+    }
+
+    #dv2_1{
+        border: 5px solid rgb(49, 177, 209);
+        display: block;
+        justify-content: center;
+        text-align: center;
+        height: 150px;
+
+        width: 200px;
+        padding-top: 20%;
+    }
+
+    #dv2_2{
+        border: 5px solid rgb(49, 177, 209);
+        border-top: none;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        height: 150px;
+
+        width: 200px;
+        padding-top: 20%;
+    }
+
+    #dv3{
+        border: 5px solid rgb(49, 177, 209);
+        background-color: black;
+        color: white;
+        display: block;
+        height: 300px;
+
+        width: 400px;
+    }
+
+    #dv3_2{
+        display: block;
+        justify-content: center;
+        text-align: center;
+
+        padding-top: 15%;
+    }
+    
+    #dv4{
+        
+        background-color: black;
+        color: white;
+        display: block;
+
+        width: 300px;
+        height: 300px;
+    }
+    
+    #dv4_2{
+        display: block;
+        justify-content: center;
+        text-align: center;
+
+        border: 5px solid rgb(49, 177, 209);
+    }
+    #dv8_2{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        
+        border: 5px solid rgb(49, 177, 209);
+    }
+
+    #dv5{
+        display: block;
+        height: 200px;
+    }
+    
+    #dv6{
+        display: block;
+        height: 200px;
+    }
+
+    #dv8{
+        display: block;
+        height: 250px;
+        width: 300px;
+
+    }
+
+    .p_divs{
+        font-size: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #dv7{
+        background-color: rgb(49, 177, 209);
+
+        font-size: 20px;
+ 
+        height: 40px;
+        margin: 20px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #dv7:hover{
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+    
+    
+    #scores{
+        display: flex;
+    }
+    
+    #videos{
+        display: flex;  
+    }
+
+    #hoohoo{
+        display: flex;  
+        border: 5px solid rgb(49, 177, 209);
+
+        margin: 20px 0 10px 0;
+        background-color: black;
+    }
+    
+    .modal-wrapper{
+        position: fixed;
+        top: -210px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+    
+    .modal{
+        background: white;
+        padding: 24px 16px;
+        border: 5px solid rgb(49, 177, 209);
+        border-radius: 4px;
+        width: 1010px;
+        height: 420px;
+        overflow: auto;
+        opacity: 0.95;   
+        color: black;
+    }
+
+    .close-wrapper{
+        position: sticky;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+    }
+
+    button{
+        width: 70px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: rgb(49, 177, 209);
+        border: solid 3px rgb(3, 81, 100);
+    }
+
+    </style>
+    <body>
+        <link rel="shortcut icon" href="#">
+        {% load static %}
+        <!-- <link rel="stylesheet" href="{% static 'feedback.css' %}"> -->
+
+
+        <div id="container">
+            <div id="box">
+                <div id="dv1">
+                    {{ exercise }}
+                </div>
+                <div id="scores">
+                    <div class="dvs" id="dv2">
+                        <div id="dv2_1">
+                            <div style="color: rgb(254, 199, 61);">점수</div>
+                            <div style="font-size: 25px;">{{ score }}</div>
+                        </div>
+                        <div id="dv2_2">
+                            <div id="haha" style="color: rgb(254, 199, 61);">가동범위(L, R)</div>
+                            <div style="font-size: 25px;">{{ op_range }}</div>
+                        </div>
+                    </div>
+                    <div class="dvs" id="dv3">
+                        <div id="dv3_2">
+                            <div style="color: rgb(254, 199, 61); margin-bottom: 10px">피드백</div>
+                            <div style="font-size: 12.5px; color:white; font-weight:bold;">{{ feedback|linebreaks }}</div>
+                            <div id="dv7">자세히보기 (Click!)</div>
+                        </div>
+                    </div>
+                    <div class="dvs" id="dv4" style="overflow:auto;">
+                        <div id="dv4_2" style="display:block; background-color: white;">
+                            <canvas id="radar-chart1" width="100vw" height="100vh"></canvas>
+                            <canvas id="radar-chart2" width="100vw" height="100vh"></canvas>
+                            <canvas id="radar-chart3" width="100vw" height="100vh"></canvas>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div id="videos">
+                    <div id="hoohoo">
+                        <div class="dvs" id="dv5">
+                            <div class="p_divs">
+                                <p style="color: rgb(254, 199, 61);">트레이너 영상</p>
+                            </div>
+                            <video src= {{ trainer_video }} controls autoplay loop></video>
+                        </div>
+                        <div class="dvs" id="dv6">
+                            <div class="p_divs">
+                                <p style="color: rgb(254, 199, 61);">사용자 영상</p>
+                            </div>
+                            <video src= {{ user_video }} controls autoplay loop></video>
+                        </div>
+                    </div>
+
+                    <div class="dvs" id="dv8">
+                        <div id="dv8_2" style="display:block; background-color: white;">
+                            <canvas id="bar1" width="250vw" height="250vh" style="width: 250px; height: 250px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+         
+                
+            </div>
+        </div>
+
+        <div class="modal-wrapper" id="modal" style="display: none;">
+            <div class="modal">
+                {{ angle_variation|linebreaks }}
+                {{ direct_variation|linebreaks }}
+                <div class="close-wrapper">
+                    <button id="close1">닫기</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        const open1 = document.getElementById("dv7");
+        const modal = document.querySelector("#modal");
+
+        open1.onclick = () => {
+            modal.style.display = "flex";
+        }
+
+        const close1 = document.getElementById("close1");
+
+        close1.onclick = () => {
+            modal.style.display = "none";
+        }
+
+        SJ_a_v_0 = {{ SJ_a_v_0 }},
+        SJ_a_v_1 = {{ SJ_a_v_1 }},
+        SJ_a_v_2 = {{ SJ_a_v_2 }},
+        SJ_a_v_3 = {{ SJ_a_v_3 }},
+        SJ_a_v_4 = {{ SJ_a_v_4 }},
+        SJ_a_v_5 = {{ SJ_a_v_5 }},
+        SJ_a_v_6 = {{ SJ_a_v_6 }},
+        SJ_a_v_7 = {{ SJ_a_v_7 }},
+        SJ_a_v_8 = {{ SJ_a_v_8 }},
+        SJ_a_v_9 = {{ SJ_a_v_9 }},
+        SJ_a_v_10 = {{ SJ_a_v_10 }},
+        SJ_a_v_11 = {{ SJ_a_v_11 }},
+        SJ_a_v_12 = {{ SJ_a_v_12 }},
+        SJ_a_v_13 = {{ SJ_a_v_13 }},
+        SJ_a_v_14 = {{ SJ_a_v_14 }},
+        SJ_a_v_15 = {{ SJ_a_v_15 }},
+
+        SJ_a_v_16 = {{ SJ_a_v_16 }},
+        SJ_a_v_17 = {{ SJ_a_v_17 }},
+        SJ_a_v_18 = {{ SJ_a_v_18 }},
+        SJ_a_v_19 = {{ SJ_a_v_19 }},
+        SJ_a_v_20 = {{ SJ_a_v_20 }},
+        SJ_a_v_21 = {{ SJ_a_v_21 }},
+        SJ_a_v_22 = {{ SJ_a_v_22 }},
+        SJ_a_v_23 = {{ SJ_a_v_23 }}
+
+        const radar_chart3 = document.getElementById("radar-chart3");
+
+        if (SJ_a_v_16 == 0) {
+            radar_chart3.style.display = 'none'; // 풀업이나 벤치프레스일 경우 3번째 radar chart 안보이게 설정
+        }
+
+        const haha = document.getElementById("haha");
+
+        function hihi (){
+            haha.innerText = "가동범위";
+        }
+
+        if (SJ_a_v_16 != 0) {
+            hihi();
+        }
+
+        new Chart(document.getElementById("radar-chart1"), {
+            type: 'radar',
+            data: {
+              labels: ["0 ~ 25% 구간", "25 ~ 50% 구간", "50 ~ 75% 구간", "75 ~ 100% 구간"],
+              datasets: [
+                {
+                  label: "트레이너",
+                  fill: true,
+                  backgroundColor: "rgba(238, 82, 83,0.2)",
+                  borderColor: "rgba(238, 82, 83,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(179,181,198,1)",
+                  data: [SJ_a_v_0,SJ_a_v_1,SJ_a_v_2,SJ_a_v_3]
+                }, {
+                  label: "사용자",
+                  fill: true,
+                  backgroundColor: "rgba(46, 134, 222,0.2)",
+                  borderColor: "rgba(46, 134, 222,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(255,99,132,1)",
+                  pointBorderColor: "#fff",
+                  data: [SJ_a_v_4,SJ_a_v_5,SJ_a_v_6,SJ_a_v_7]
+                }
+              ]
+            },
+            options: {
+              title: {
+                display: true,
+                text: (SJ_a_v_16 == 0 ? '왼팔 각도' : '뒷목 각도') //스쿼트일 경우, 뒷목 각도
+              }
+            }
+        });
+
+        new Chart(document.getElementById("radar-chart2"), {
+            type: 'radar',
+            data: {
+              labels: ["0 ~ 25% 구간", "25 ~ 50% 구간", "50 ~ 75% 구간", "75 ~ 100% 구간"],
+              datasets: [
+                {
+                  label: "트레이너",
+                  fill: true,
+                  backgroundColor: "rgba(238, 82, 83,0.2)",
+                  borderColor: "rgba(238, 82, 83,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(179,181,198,1)",
+                  data: [SJ_a_v_8,SJ_a_v_9,SJ_a_v_10,SJ_a_v_11]
+                }, {
+                  label: "사용자",
+                  fill: true,
+                  backgroundColor: "rgba(46, 134, 222,0.2)",
+                  borderColor: "rgba(46, 134, 222,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(255,99,132,1)",
+                  pointBorderColor: "#fff",
+                  data: [SJ_a_v_12,SJ_a_v_13,SJ_a_v_14,SJ_a_v_15]
+                }
+              ]
+            },
+            options: {
+              title: {
+                display: true,
+                text: (SJ_a_v_16 == 0 ? '오른팔 각도' : '오른쪽 뒷무릎 각도') //스쿼트일 경우, 오른쪽 뒷무릎 각도
+              }
+            }
+        });
+
+        new Chart(document.getElementById("radar-chart3"), {
+            type: 'radar',
+            data: {
+              labels: ["0 ~ 25% 구간", "25 ~ 50% 구간", "50 ~ 75% 구간", "75 ~ 100% 구간"],
+              datasets: [
+                {
+                  label: "트레이너",
+                  fill: true,
+                  backgroundColor: "rgba(238, 82, 83,0.2)",
+                  borderColor: "rgba(238, 82, 83,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(179,181,198,1)",
+                  data: [SJ_a_v_16,SJ_a_v_17,SJ_a_v_18,SJ_a_v_19]
+                }, {
+                  label: "사용자",
+                  fill: true,
+                  backgroundColor: "rgba(46, 134, 222,0.2)",
+                  borderColor: "rgba(46, 134, 222,1.0)",
+                  pointBorderColor: "#fff",
+                  pointBackgroundColor: "rgba(255,99,132,1)",
+                  pointBorderColor: "#fff",
+                  data: [SJ_a_v_20,SJ_a_v_21,SJ_a_v_22,SJ_a_v_23]
+                }
+              ]
+            },
+            options: {
+              title: {
+                display: true,
+                text: '척추 각도'
+              }
+            }
+        });
+        
+
+        // 트레이너&유저 방향변화점 수 - 비교 막대그래프
+
+        barchart_exercise_type = "{{exercise}}", // 운동종류 받아오기
+        trainer_barchart_data = {{trainer_barchart_data}}, // 트레이너 방향변화점 수
+        user_barchart_data = {{user_barchart_data}} // 유저 방향변화점 수
+
+        // 조건문 사용
+        if (barchart_exercise_type == "스쿼트") {
+            label = ["엉덩이", "무릎", "허리"];
+        }
+
+        else if (barchart_exercise_type == "풀업") {
+            label = ["왼쪽 어깨", "왼쪽 팔꿈치", "오른쪽 어깨", "오른쪽 팔꿈치"]
+        }
+
+        else {  // "벤치프레스"
+            label = ["왼쪽 어깨", "왼쪽 팔꿈치", "왼쪽 팔목", "오른쪽 어깨", "오른쪽 팔꿈치", "오른쪽 팔목"]
+        }
+
+        var Bar = {                
+            labels: label,      
+            datasets: [{             
+                label: '트레이너 방향변화 수',             
+                backgroundColor: "rgba(238, 82, 83,1.0)",             
+                data: {{trainer_barchart_data}}         
+                }, {            
+                    label: '유저 방향변화 수',             
+                    backgroundColor: "rgba(46, 134, 222,1.0)",            
+                    data: {{user_barchart_data}}         
+                }]     
+            };  
+
+        window.onload = function() {     
+            var ctx = $('#bar1').get(0).getContext("2d");     
+            window.theChart = new Chart(ctx, {          
+                type: 'bar',         
+                data: Bar,          
+                options: {       
+                    responsive: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    } 
+                  
+                 }  
+            }); 
+        }
+             
+        //console.log(typeof(trainer_barchart_data));
+        //console.log(typeof(user_barchart_data)); 
+        //console.log(barchart_exercise_type);
+        //console.log(typeof(barchart_exercise_type));
+
+    </script>

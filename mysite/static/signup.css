@@ -1,0 +1,22 @@
+body{
+    position: relative;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+   font-weight: bold;
+}
+
+#container{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+}
+
+input{
+    border-width: 2px;
+    font-weight: bold;
+    
+}

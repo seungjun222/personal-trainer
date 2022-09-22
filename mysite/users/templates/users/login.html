@@ -1,0 +1,33 @@
+<body>
+    <div id="container">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+        <img src="{% static 'userlogin.png'%}" alt="" width="300px" height="300px">
+        {% if user.is_authenticated %}
+            <div id="success_div">
+                로그인 성공!
+                <br>
+                {{ user.username }}님 환영합니다.
+                <br>
+                <a href="{% url 'user:buttons' %}">시작하기</a>
+                <br>
+                <!-- <img id="original" src="{{ user.profile_img.url }}" alt="프로필사진"> -->
+                <a href="{% url 'user:logout' %}">로그아웃</a>
+            </div>
+        {% else %}
+        
+        <div id="form_div">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input name="username" type="text" size="12">
+                <br>
+                <input name="password" type="password" size="12">
+                <input type="submit" value="로그인">
+            
+            </form>
+            <a href="{% url 'user:signup' %}">회원가입</a>
+        </div>
+        
+        {% endif %}
+    </div>
+</body>

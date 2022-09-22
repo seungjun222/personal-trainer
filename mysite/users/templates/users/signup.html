@@ -1,0 +1,21 @@
+<body>
+    <div id="container">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'signup.css' %}">
+        <img src="{% static 'signup.png' %}" alt="" width="300px" height="300px">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>아이디</p>
+            <input name="username" type="text">
+            <p>비밀번호</p>
+            <input name="password" type="password">
+            <p>이름</p>
+            <input name="realname" type="text">
+            <p>이메일</p>
+            <input name="email" type="text">
+
+        
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
+</body>
